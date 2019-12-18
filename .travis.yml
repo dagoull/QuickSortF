@@ -1,7 +1,5 @@
 language: java
 
-sudo: false
-
 dist: trusty
 
 install: true
@@ -43,7 +41,3 @@ notifications:
   recipients:
 
     - dcastell@ull.es
-
-on_success: always
-
-on_failure: always
