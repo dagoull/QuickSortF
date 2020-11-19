@@ -9,11 +9,9 @@
 
   <name>quicksort</name>
   <url>http://maven.apache.org</url>
-
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <properties>
     <sonar.projectKey>dagoull_QuickSortF</sonar.projectKey>
     <sonar.organization>dcastell</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
