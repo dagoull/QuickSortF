@@ -17,6 +17,8 @@ addons:
 jdk:
 
    - oraclejdk9
+   - oraclejdk11
+   - openjdk11
 
 script:
 
