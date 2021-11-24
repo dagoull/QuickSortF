@@ -15,7 +15,10 @@
     <sonar.projectKey>dagoull_QuickSortF</sonar.projectKey>
     <sonar.organization>dcastell</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
   </properties>
+  
   <dependencies>
   	<dependency>
   		<groupId>junit</groupId>
@@ -23,14 +26,7 @@
   		<version>4.13.1</version>
   	</dependency>
   </dependencies>
-  
-   <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-            <source>1.6</source>
-            <target>1.6</target>
-        </configuration>
-    </plugin>
+
+
   
 </project>
