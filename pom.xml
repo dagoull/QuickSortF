@@ -17,7 +17,53 @@
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <maven.compiler.source>1.6</maven.compiler.source>
     <maven.compiler.target>1.6</maven.compiler.target>
+        <!-- JaCoCo Properties -->
+    <jacoco.version>0.8.6</jacoco.version>
+    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+    <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+    <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+    <sonar.language>java</sonar.language>
   </properties>
+  
+    <reporting>
+         <plugins>
+            <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>cobertura-maven-plugin</artifactId>
+            <version>2.0</version>
+         </plugin>
+     </plugins>
+   </reporting> 
+ 
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <executions>
+                    <execution>
+                        <id>jacoco-initialize</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>jacoco-site</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
   
   <dependencies>
   	<dependency>
@@ -25,16 +71,10 @@
   		<artifactId>junit</artifactId>
   		<version>4.13.1</version>
   	</dependency>
+    <dependency>
+      <groupId>org.jacoco</groupId> 
+      <artifactId>jacoco-maven-plugin</artifactId>
+      <version>0.8.6</version>
+  </dependency>
   </dependencies>
-
-   <reporting>
-         <plugins>
-            <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>cobertura-maven-plugin</artifactId>
-            <version>2.0</version>
-         </plugin>
-      </plugins>
-   </reporting> 
-  
 </project>
